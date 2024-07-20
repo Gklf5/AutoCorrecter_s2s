@@ -1,13 +1,13 @@
-import keras
 import pickle
 import numpy as np
-import tensorflow
+import tensorflow as tf
+from tensorflow import keras
 
 class Model:
     def __init__(self):
-        self.encoder_model = keras.models.load_model('./models/encorder_mod.h5')
+        self.encoder_model = keras.models.load_model('./models/encoder_mod.h5')
         self.decoder_model = keras.models.load_model('./models/decoder_mod.h5')
-        with open('var.pkl', 'rb') as f:
+        with open('./models/var.pkl', 'rb') as f:
             jj = pickle.load(f)
         self.input_token_index = jj["input_token_index"]
         self.target_token_index = jj["target_token_index"]
