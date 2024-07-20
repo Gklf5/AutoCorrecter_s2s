@@ -51,3 +51,4 @@ class Model:
 
         decoded_sentence = self.decode_sequence(encoder_test_data)
         print(test_text, '--->', decoded_sentence)
+        return decoded_sentence
